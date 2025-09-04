@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="SauceDemoSuite">
+    <test name="AllTests">
+        <classes>
+            <class name="HappyFlowTest"/>   <!-- prima clasă de teste -->
+            <class name="DogCaseFlow"/>  <!-- a doua clasă -->
+            <class name="NegativeFlowTest"/>    <!-- a treia clasă -->
+        </classes>
+    </test>
+</suite>
