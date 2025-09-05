@@ -2,9 +2,9 @@
 <suite name="SauceDemoSuite">
     <test name="AllTests">
         <classes>
-            <class name="HappyFlowTest"/>   <!-- prima clasă de teste -->
-            <class name="DogCaseFlow"/>  <!-- a doua clasă -->
-            <class name="NegativeFlowTest"/>    <!-- a treia clasă -->
+            <class name="HappyFlowTest"/>
+            <class name="DogCaseFlow"/>
+            <class name="NegativeFlowTest"/>
         </classes>
     </test>
 </suite>

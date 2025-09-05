@@ -15,6 +15,7 @@ public class ActiuniHelper {
     private static final By CONTINUA_SHOPPINGUL = By.id("continue-shopping");
     private static final By MENIU_BURGER = By.id("react-burger-menu-btn");
     private static final By BUTON_LOGOUT = By.id("logout_sidebar_link");
+    private static final By BUTON_CHECKOUT = By.cssSelector("button[data-test='checkout']");
 
     private static WebDriverWait wait(WebDriver driver) {
         return new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -49,5 +50,9 @@ public class ActiuniHelper {
     public static void logout(WebDriver driver) {
         driver.findElement(MENIU_BURGER).click();
         wait(driver).until(ExpectedConditions.elementToBeClickable(BUTON_LOGOUT)).click();
+    }
+
+    public static void checkoutButton(WebDriver driver) {
+        driver.findElement(BUTON_CHECKOUT).click();
     }
 }
