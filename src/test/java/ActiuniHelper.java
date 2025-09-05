@@ -16,6 +16,8 @@ public class ActiuniHelper {
     private static final By MENIU_BURGER = By.id("react-burger-menu-btn");
     private static final By BUTON_LOGOUT = By.id("logout_sidebar_link");
     private static final By BUTON_CHECKOUT = By.cssSelector("button[data-test='checkout']");
+    private static final By SIDEBAR_BUTTON = By.id("about_sidebar_link");
+    private static final By SAUCE_LABS_BACKPACK = By.xpath("//*[text()='Sauce Labs Backpack']");
 
     private static WebDriverWait wait(WebDriver driver) {
         return new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -55,4 +57,28 @@ public class ActiuniHelper {
     public static void checkoutButton(WebDriver driver) {
         driver.findElement(BUTON_CHECKOUT).click();
     }
+
+    public static void clickOnAbout(WebDriver driver) {
+        driver.findElement(MENIU_BURGER).click();
+        wait(driver).until(ExpectedConditions.elementToBeClickable(SIDEBAR_BUTTON)).click();
+    }
+
+    public static void verificaGhiozdan(WebDriver driver) {
+        List<WebElement> products = driver.findElements(SAUCE_LABS_BACKPACK);
+
+        if (products.isEmpty()) {
+            System.out.println("N-am gasit Ghiozdanul pe pagina unde am ajuns dupa click ❌");
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            driver.quit();
+        } else {
+            System.out.println("Am gasit ghiozdanu ✅ deci useru selectat nu ii bun pt ca testu trebuia sa pice");
+        }
+    }
+
 }
+
+

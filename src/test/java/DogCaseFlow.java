@@ -6,7 +6,7 @@ public class DogCaseFlow {
 
     @Test
 
-    public void testMethodDogCaseTest() {
+    public void testMethodDogCaseTest() throws InterruptedException {
         driver = DriverHelper.createDriver();
         LoginHelper.login(driver, "problem_user", "secret_sauce");
 
@@ -19,7 +19,8 @@ public class DogCaseFlow {
         ActiuniHelper.deschideCart(driver);
         ActiuniHelper.removeFromCartByPozitie(driver, 1);
 
-        ActiuniHelper.logout(driver);
+        ActiuniHelper.clickOnAbout(driver);
+        ActiuniHelper.verificaGhiozdan(driver);
 
         driver.quit();
 
